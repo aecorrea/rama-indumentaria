@@ -1,0 +1,139 @@
+@import "./variables";
+@import "./footer";
+@mixin bg-color ($color: #ffffff){
+    background-color: $color;
+}
+@mixin t-color($color: #000000) {
+    color: $color;
+}
+
+
+body {
+    position: absolute;
+    width: 100%;
+    color: $text-color;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+
+  #main {
+    @include bg-color($primary-color);
+    @include t-color($text-color);
+
+  }
+
+  #logo {
+    max-width: 10%;
+    padding-left: 10px;
+     
+  }
+  
+  #bs-navbar {
+    position: fixed;
+    opacity: 0.9;
+  }
+
+  .container{
+    padding-top: 10vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .grid {
+        padding-top: 1vh;
+        padding-bottom: 8vw;
+        display: grid;
+        grid-template: 50% 1fr / 50% 1fr;
+
+
+        .h2-index-class {
+            font-size: $title-size;
+            padding: 0px;
+            margin: 0;
+          }
+
+        #p-index {
+            font-size: $p-size;
+            padding-top: 3vw;
+          }
+
+        #casual {
+            display: flex;
+            width: 80%;
+            height: auto;
+            float: left;
+            margin-top: 35px;
+          }
+          
+          #uniform {
+            display: flex;
+            width: 70%;
+            height: auto;
+            float: right; 
+            margin-top: 40px;
+          }
+          
+          #quality {
+            display: flex;
+            width: 90%;
+            margin-top: 45px;
+          }
+      }
+  }
+
+
+//   ABOUT PAGE
+
+#about {
+
+    padding-bottom: 3vw;
+
+    h1 {
+        color: $text-color;
+        font-size: $title-size;
+    }
+    p {
+        font-size: $p-size;
+    }
+    #about-logo {
+        display: flex;
+        width: 55%;
+        height: auto;
+        float: right;
+        align-content: center;
+      
+      }
+}
+
+// CONTACT PAGE
+.form {
+
+    h1 {
+        @include t-color($text-color);
+        font-size: $title-size - 20px;
+    }
+
+    p {
+        @include t-color($text-color);
+        font-size: $p-size - 10px;
+    }
+    
+
+
+    .form-group {
+        textarea {
+            resize: none;
+            margin-bottom: 2vw;
+        }
+        button {
+            margin: 3vw;
+        }
+    }
+}
+
+  
+
+  

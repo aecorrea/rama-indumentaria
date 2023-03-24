@@ -1,0 +1,39 @@
+footer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    border-top-style: solid;
+    border-width: 2px;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+    margin-top: 2vw;
+    
+   ul {
+        width: 35vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+      }
+      a:link, a:visited {
+        text-decoration: none;
+        color:#14213d;
+      }
+      a:hover {
+        font-weight: bold;
+      
+      }
+      
+  
+  }
+
+  .footer-logo {
+    max-width: 30px;
+    max-height: auto;
+    display: flex;
+    flex-direction: right;
+    align-items: right;
+  }
