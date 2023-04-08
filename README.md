@@ -2,6 +2,8 @@
 
 ###
 
+<h2 align="left">Este commit es la entrega final del proyecto del curso de Desarrollo Web de CODERHOUSE</h2>
+
 <p align="left">Mi nombre es Agustín y soy un estudiante de desarrollo FronEnd React, de Córdoba, Argentina.</p>
 
 ###
