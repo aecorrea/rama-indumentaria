@@ -2,7 +2,7 @@
 
 ###
 
-<p align="left">Mi nombre es Agustín and soy un estudiante de desarrolo FronEnd React, de Córdoba, Argentina.</p>
+<p align="left">Mi nombre es Agustín y soy un estudiante de desarrollo FronEnd React, de Córdoba, Argentina.</p>
 
 ###
 
