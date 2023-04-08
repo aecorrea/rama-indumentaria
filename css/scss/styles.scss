@@ -1,139 +1,237 @@
 @import "./variables";
 @import "./footer";
-@mixin bg-color ($color: #ffffff){
-    background-color: $color;
+@import "./animations";
+// @import "./queries";
+// @import "./carousel";
+@mixin bg-color($color: #ffffff) {
+  background-color: $color;
 }
 @mixin t-color($color: #000000) {
-    color: $color;
+  color: $color;
 }
 
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
 
 body {
-    position: absolute;
-    width: 100%;
-    color: $text-color;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+  width: 100%;
+  color: $text-color;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+#main {
+  @include bg-color($primary-color);
+  @include t-color($text-color);
+}
+
+#logo {
+  max-width: 10%;
+  padding-left: 10px;
+}
+
+#bs-navbar {
+  position: fixed;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.container {
+  padding-top: 10vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .grid {
+    display: grid;
+    padding-top: 1vh;
+    padding-bottom: 8vw;
+    grid-template: 50% 1fr / 50% 1fr;
+
+    .h2-index-class {
+      font-size: $title-size;
+      padding: 0px;
+      margin: 0;
+    }
+
+    #p-index {
+      font-size: $p-size;
+      padding-top: 3vw;
+    }
+
+    #casual {
+      display: flex;
+      width: 80%;
+      height: auto;
+      float: left;
+      margin-top: 35px;
+    }
+
+    #uniform {
+      display: flex;
+      width: 70%;
+      height: auto;
+      float: right;
+      margin-top: 40px;
+    }
+
+    #quality {
+      display: flex;
+      width: 90%;
+      margin-top: 45px;
+    }
   }
-
-  #main {
-    @include bg-color($primary-color);
-    @include t-color($text-color);
-
-  }
-
-  #logo {
-    max-width: 10%;
-    padding-left: 10px;
-     
-  }
-  
-  #bs-navbar {
-    position: fixed;
-    opacity: 0.9;
-  }
-
-  .container{
-    padding-top: 10vw;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-    .grid {
-        padding-top: 1vh;
-        padding-bottom: 8vw;
-        display: grid;
-        grid-template: 50% 1fr / 50% 1fr;
-
-
-        .h2-index-class {
-            font-size: $title-size;
-            padding: 0px;
-            margin: 0;
-          }
-
-        #p-index {
-            font-size: $p-size;
-            padding-top: 3vw;
-          }
-
-        #casual {
-            display: flex;
-            width: 80%;
-            height: auto;
-            float: left;
-            margin-top: 35px;
-          }
-          
-          #uniform {
-            display: flex;
-            width: 70%;
-            height: auto;
-            float: right; 
-            margin-top: 40px;
-          }
-          
-          #quality {
-            display: flex;
-            width: 90%;
-            margin-top: 45px;
-          }
-      }
-  }
-
+}
 
 //   ABOUT PAGE
 
 #about {
+  padding-bottom: 3vw;
 
-    padding-bottom: 3vw;
-
-    h1 {
-        color: $text-color;
-        font-size: $title-size;
-    }
-    p {
-        font-size: $p-size;
-    }
-    #about-logo {
-        display: flex;
-        width: 55%;
-        height: auto;
-        float: right;
-        align-content: center;
-      
-      }
+  h1 {
+    color: $text-color;
+    font-size: $title-size;
+  }
+  p {
+    font-size: $p-size;
+  }
+  #about-logo {
+    display: flex;
+    width: 55%;
+    height: auto;
+    float: right;
+    align-content: center;
+  }
 }
 
 // CONTACT PAGE
 .form {
+  h1 {
+    @include t-color($text-color);
+    font-size: $title-size - 20px;
+  }
 
-    h1 {
-        @include t-color($text-color);
-        font-size: $title-size - 20px;
+  p {
+    @include t-color($text-color);
+    font-size: $p-size - 10px;
+  }
+
+  .form-group {
+    textarea {
+      resize: none;
+      margin-bottom: 2vw;
+    }
+    button {
+      margin: 3vw;
+    }
+  }
+}
+//MENSWEAR
+
+#menswear-container {
+  display: flex;
+
+  .h1-index-class {
+    font-size: $title-size;
+  }
+
+  .aside {
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    float: left;
+
+    .aside-fieldset {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      border: none;
     }
 
-    p {
-        @include t-color($text-color);
-        font-size: $p-size - 10px;
+    .category-label,
+    .sort-label {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: left;
+      justify-content: space-between;
     }
-    
+  }
 
+  .grid-products {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 250px 250px 250px;
+    justify-items: center;
+    padding-top: 8vh;
 
-    .form-group {
-        textarea {
-            resize: none;
-            margin-bottom: 2vw;
-        }
-        button {
-            margin: 3vw;
-        }
+    .grid-items {
+      display: grid;
+      padding: 15px;
+      margin: 10px;
+      box-shadow: 0.5px 0.5px 0.5px 0.5px $text-color;
+
+      .product-footer {
+        text-align: center;
+      }
+
+      .product-placeholder {
+        width: 250px;
+        height: auto;
+      }
     }
+  }
 }
 
-  
+// MEDIA QUERIES
 
-  
+@media screen and (max-width: 600px) {
+  #main {
+    .grid-products {
+      display: grid;
+      grid-template: 1fr/1fr;
+    }
+
+    .container .grid {
+      display: grid;
+      padding-top: 1vh;
+      padding-bottom: 8vw;
+      grid-template: 1fr / 1fr;
+
+      .img {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    #h1-contact {
+      padding-top: 50px;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1080px) {
+  #main {
+    .grid-products {
+      display: grid;
+      grid-template: 50% 1fr /50% 1fr;
+      padding-bottom: 30vh;
+    }
+  }
+}
